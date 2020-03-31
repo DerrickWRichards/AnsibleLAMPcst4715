@@ -1,0 +1,22 @@
+####lampuninstall.yml
+     
+- hosts: CST4715_TEAM4
+  become: true
+  tasks:
+  - name: Remove Apache.
+    yum:
+      pkg: absent
+      state: installed
+      update_cache:true 
+        
+  - name: Remove Mysql
+    yum:
+      pkg: mysql
+      state: absent
+      update_cache:true
+     
+  - name: Remove PHP.
+    yum:
+      pkg: php
+      state: absent
+      update_cache:true         

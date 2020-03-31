@@ -1,0 +1,22 @@
+######lampintstall.yml      
+       
+- hosts: CST4715_TEAM4
+  become: true
+  tasks:
+  - name: Install Apache.
+    yum:
+      pkg: httpd
+      state: installed
+      update_cache:true 
+        
+  - name: Install Mysql
+    yum:
+      pkg: mysql
+      state: installed
+      update_cache:true
+     
+  - name: Install PHP.
+    yum:
+      pkg: php
+      state: installed
+      update_cache:true
